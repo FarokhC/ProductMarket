@@ -2,8 +2,8 @@
     echo "<h1>Services</h1>";
     // require_once("navbar.php");
     // echo "<br>";
-    echo "<a href='previously_visited_products.php'>Previously Visited Products and Services</a><br>";
-    echo "<a href='most_visited_products.php'>Most Visited Products and Services</a><br>";
+    // echo "<a href='previously_visited_products.php'>Previously Visited Products and Services</a><br>";
+    // echo "<a href='most_visited_products.php'>Most Visited Products and Services</a><br>";
     echo "<h2>Car Rentals</h2>";
     echo<<<ENDL
     <a href='/services/audi_r8.php'>Audi R8</a>
