@@ -1,6 +1,17 @@
 <?php
+  session_start();
+  if(!isset($_SESSION['username'])){
+    header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+    exit;
+  }
 
-//TODO: Add login to check if the session exists before displaying contents
+  if(isset($_GET['logout'])){
+    unset($_SESSION['username']);
+    header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+    exit;
+  }
+
+  echo "<a href = '/services.php?logout=true'>Logout</a><br>";
 
     echo "<h2>Car Rentals</h2>";
     echo<<<ENDL

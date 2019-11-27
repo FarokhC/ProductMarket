@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $serverUsername = "id11702576_phpproductmarket";
 $serverPassword = "bois3";
@@ -12,12 +13,17 @@ $dbname = "id11702576_marketplace";
  $sql = "SELECT * FROM users WHERE username = '$user_name' and pass_word = '$pass_word'";
  $res = $conn->query($sql);
  if(!$res) {
-   header("Location: http://www.geeksforgeeks.org");
-   exit;
-     // echo "err: " . $conn->error;
+     echo "err: " . $conn->error;
  }
- else {
-   header("Location: http://www.yahoo.com");
+ else if ($res->num_rows == 0) {
+   $_SESSION['fail'] = "Login failed!";
+   header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+   exit;
+
+ } else {
+   unset($_SESSION['fail']);
+   $_SESSION['username'] = $user_name;
+   header("Location: https://phpproductmarket.000webhostapp.com/services.php");
    exit;
  }
  $conn->close();
