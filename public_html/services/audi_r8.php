@@ -1,4 +1,10 @@
 <?php
+session_start();
+if(!isset($_SESSION['username'])){
+  header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+  exit;
+}
+
     $page_name = "Audi R8";
     // require_once("../php/previous_visited_cookies.php");
     // handle_last_five_pages_visited($page_name);

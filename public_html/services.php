@@ -13,6 +13,8 @@
 
   echo "<a href = '/services.php?logout=true'>Logout</a><br>";
 
+  echo "<h1>Car Rental Company Products and Services</h1>";
+
     echo "<h2>Car Rentals</h2>";
     echo<<<ENDL
     <a href='/services/audi_r8.php'>Audi R8</a>
@@ -75,4 +77,29 @@ ENDL;
         <img src='https://www.a-1autoglass.com/wp-content/uploads/2013/09/windshield-replacement.jpg' alt='Quartz Regalia'><br>
         <br>
 ENDL;
+
+  echo "<h1>BulletProof Products</h1>";
+  echo <<<ENDL
+  <h3><b><a href = "../services/gunDetection.php">Gun Detection App</a></b></h3>
+
+  <h3><b><a href = "../services/bulletProof.php">BulletProof</a></b></h3>
+
+  <h3><b><a href = "../services/playDead.php">PlayDead</a></b></h3>
+
+  <h3><b><a href = "../services/freqOut.php">FreqOut</a></b></h3>
+
+  <h3><b><a href = "../services/iGun.php">iGun</a></b></h3>
+
+  <h3><b><a href = "../services/stressBot.php">Stress Bot</a></b></h3>
+
+  <h3><b><a href = "../services/halo.php">Halo</a></b></h3>
+
+  <h3><b><a href = "../services/bodyArmor.php">BodyArmor</a></b></h3>
+
+  <h3><b><a href = "../services/swatAway.php">SwatAway</a></b></h3>
+
+  <h3><b><a href = "../services/coffeeMug.php">Coffee Mug</a></b></h3><br><br>
+ENDL;
+
+  echo "<h1>Smart AI Product<h1>";
 ?>
