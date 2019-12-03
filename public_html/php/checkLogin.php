@@ -23,6 +23,12 @@ $dbname = "id11702576_marketplace";
  } else {
    unset($_SESSION['fail']);
    $_SESSION['username'] = $user_name;
+
+   $array = array();
+   $_SESSION['bHistory'] = array();
+   $_SESSION['cHistory'] = array();
+   $_SESSION['sHistory'] = array();
+
    header("Location: https://phpproductmarket.000webhostapp.com/services.php");
    exit;
  }
