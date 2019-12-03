@@ -1,5 +1,7 @@
 <?php
     session_start();
+    // print_r($_COOKIE);
+    // print_r($_SESSION);
     if(isset($_SESSION['fail'])){
       echo $_SESSION['fail'];
       echo "<br>";

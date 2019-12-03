@@ -6,6 +6,17 @@ if(!isset($_SESSION['username'])){
 }
 
     $page_name = "Coffee Mug";
+    $visited = false;
+    $pages = $_SESSION['bHistory'];
+    foreach($pages as $key => $value){
+      if($value == $page_name){
+        $visited = true;
+      }
+    }
+    if(!$visited){
+      array_push($pages, $page_name);
+      $_SESSION['bHistory'] = $pages;
+    }
     // require_once("../php/previous_visited_cookies.php");
     // handle_last_five_pages_visited($page_name);
     // handle_most_visited_pages($page_name);

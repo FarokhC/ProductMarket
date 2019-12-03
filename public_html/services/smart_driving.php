@@ -4,10 +4,9 @@ if(!isset($_SESSION['username'])){
   header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
   exit;
 }
-
-    $page_name = "Audi R8";
+    $page_name = "Smart Driving Solutions";
     $visited = false;
-    $pages = $_SESSION['cHistory'];
+    $pages = $_SESSION['sHistory'];
     foreach($pages as $key => $value){
       if($value == $page_name){
         $visited = true;
@@ -15,20 +14,18 @@ if(!isset($_SESSION['username'])){
     }
     if(!$visited){
       array_push($pages, $page_name);
-      $_SESSION['cHistory'] = $pages;
+      $_SESSION['sHistory'] = $pages;
     }
     // require_once("../php/previous_visited_cookies.php");
     // handle_last_five_pages_visited($page_name);
     // handle_most_visited_pages($page_name);
     echo<<<ENDL
-    <h1>Audi R8</h1>
-    <img src='https://www.topgear.com/sites/default/files/styles/large/public/cars-car/carousel/2018/11/a1813694_large.jpg?itok=DCVn38mf' alt='Audi R8'><br>
-    <h2>Vehicle Details</h2>
+    <h1>Smart Driving</h1>
+    <img src='https://zykotech.com/wp-content/uploads/2017/01/ADAS-solution-1170x658.jpg'><br>
+    <h2>Details</h2>
     <ul>
-        <li>Horsepower: 611 hp</li>
-        <li>Torque: 417 lb-ft</li>
-        <li>Fuel Economy: 13 city / 20 highway</li>
-        <li>0 - 60 MPH time: 3.2 seconds</li>
+        <li>Smart Driving solution</li>
+        <li>Autonomous Driving</li>
     </ul>
 ENDL;
 ?>

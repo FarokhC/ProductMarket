@@ -1,20 +1,27 @@
 <?php
   session_start();
+
   if(!isset($_SESSION['username'])){
     header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
     exit;
   }
 
+
   if(isset($_GET['logout'])){
     unset($_SESSION['username']);
+    unset($_SESSION['bHistory']);
+    unset($_SESSION['cHistory']);
+    unset($_SESSION['sHistory']);
+
     header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
     exit;
   }
-
+  // print_r($_SESSION);
   echo "<a href = '/services.php?logout=true'>Logout</a><br>";
 
   echo "<h1>Car Rental Company Products and Services</h1>";
 
+  echo "<p><a href = '/tracking/carRental.php'>Car Rental Company Pages visited by " . $_SESSION['username'] . "</a></p>";
     echo "<h2>Car Rentals</h2>";
     echo<<<ENDL
     <a href='/services/audi_r8.php'>Audi R8</a>
@@ -79,6 +86,7 @@ ENDL;
 ENDL;
 
   echo "<h1>BulletProof Products</h1>";
+  echo "<p><a href = '/tracking/bulletProof.php'>BulletProof Pages visited by " . $_SESSION['username'] . "</a></p>";
   echo <<<ENDL
   <h3><b><a href = "../services/gunDetection.php">Gun Detection App</a></b></h3>
 
@@ -101,5 +109,28 @@ ENDL;
   <h3><b><a href = "../services/coffeeMug.php">Coffee Mug</a></b></h3><br><br>
 ENDL;
 
-  echo "<h1>Smart AI Product<h1>";
+  echo "<h1>Smart AI Product</h1>";
+  echo "<p><a href = '/tracking/smart.php'>Smart AI Pages visited by " . $_SESSION['username'] . "</a></p>";
+
+  echo <<<ENDL
+  <h3><b><a href = "../services/smart_agriculture.php">Smart Agriculture Solutions</a></b></h3>
+
+  <h3><b><a href = "../services/smart_banking.php">Smart Banking Solutions</a></b></h3>
+
+  <h3><b><a href = "../services/smart_city.php">Smart City Solutions</a></b></h3>
+
+  <h3><b><a href = "../services/smart_driving.php">Smart Driving Solutions</a></b></h3>
+
+  <h3><b><a href = "../services/smart_gaming.php">Smart Gaming Solutions</a></b></h3>
+
+  <h3><b><a href = "../services/smart_healthcare.php">Smart Healthcare Solutions</a></b></h3>
+
+  <h3><b><a href = "../services/smart_media.php">Smart Media Solutions</a></b></h3>
+
+  <h3><b><a href = "../services/smart_monitoring.php">Smart Monitoring Solutions</a></b></h3>
+
+  <h3><b><a href = "../services/smart_nlp.php">Smart Natual Language Processing Solutions</a></b></h3>
+
+  <h3><b><a href = "../services/smart_shopping.php">Smart Shopping Solutions</a></b></h3><br><br>
+ENDL;
 ?>
