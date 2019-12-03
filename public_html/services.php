@@ -6,6 +6,13 @@
     exit;
   }
 
+  if(isset($_GET['logout'])){
+    unset($_SESSION['username']);
+    header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+    exit;
+  }
+
+  echo "<a href = '/services.php?logout=true'>Logout</a><br>";
 
   if(isset($_GET['logout'])){
     unset($_SESSION['username']);
@@ -133,4 +140,5 @@ ENDL;
 
   <h3><b><a href = "../services/smart_shopping.php">Smart Shopping Solutions</a></b></h3><br><br>
 ENDL;
+
 ?>
