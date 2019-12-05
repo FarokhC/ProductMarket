@@ -12,7 +12,7 @@
     exit;
   }
 
-  echo "<a href = '/services.php?logout=true'>Logout</a><br>";
+  // echo "<a href = '/services.php?logout=true'>Logout</a><br>";
 
   if(isset($_GET['logout'])){
     unset($_SESSION['username']);
@@ -50,6 +50,11 @@ ENDL;
     <div class="blog-banner">
       <div class="text-center">
         <h1>Shop Our Marketplace</h1>
+        <nav aria-label="breadcrumb" class="banner-breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><font color = "blue"><a href='/services.php?logout=true'>Logout</a></font></li>
+          </ol>
+        </nav>
       </div>
     </div>
   </div>
