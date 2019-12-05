@@ -3,13 +3,13 @@
   session_start();
 
   if(!isset($_SESSION['username'])){
-    header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+    header("Location: /php/login.php");
     exit;
   }
 
   if(isset($_GET['logout'])){
     unset($_SESSION['username']);
-    header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+    header("Location: /php/login.php");
     exit;
   }
 
@@ -21,7 +21,7 @@
     unset($_SESSION['cHistory']);
     unset($_SESSION['sHistory']);
 
-    header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+    header("Location: /php/login.php");
     exit;
   }
 
