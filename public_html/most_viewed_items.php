@@ -6,7 +6,7 @@
     }
 
     echo<<<ENDL
-        <h1>Top 5 Rated Items</h1>
+        <h1>Top 5 Most Viewed Items</h1>
 ENDL;
 
     require_once("./database_credentials.php");
@@ -17,7 +17,7 @@ ENDL;
     }
 
     else {
-        $sql = "SELECT product_name, rating FROM reviews";
+        $sql = "SELECT product_name, num_user_visits FROM products";
         $res = $conn->query($sql);
         if(!$res) {
             $_SESSION['message'] = "err: " . $conn->error;
@@ -26,11 +26,11 @@ ENDL;
             $reviews_arr = array();
             while($row = mysqli_fetch_array($res)) {
                  if(array_key_exists($row['product_name'], $reviews_arr)) {
-                    array_push($reviews_arr[$row['product_name']], $row['rating']);
+                    array_push($reviews_arr[$row['product_name']], $row['num_user_visits']);
                 }
                 else {
                     $new_rating_arr = array();
-                    array_push($new_rating_arr, $row['rating']);
+                    array_push($new_rating_arr, $row['num_user_visits']);
                     $reviews_arr[$row['product_name']] = $new_rating_arr;
                 }
             }
