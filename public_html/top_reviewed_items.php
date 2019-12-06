@@ -1,6 +1,6 @@
 <?php
     echo<<<ENDL
-        <h1>Top 5 Most Reviewed Items</h1>
+        <h1>Top 5 Rated Items</h1>
 ENDL;
 
     require_once("./database_credentials.php");
