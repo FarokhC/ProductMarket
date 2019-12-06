@@ -61,7 +61,13 @@ ENDL;
   </div>
   </section>
   <br><br>
+ENDL;
 
+  echo<<<ENDL
+    <a href="/top_reviewed_items.php">View Top 5 Rated Items</a>
+ENDL;
+
+  echo<<<ENDL
   <section class="related-product-area">
 		<div class="container">
 			<div class="section-intro pb-60px">
