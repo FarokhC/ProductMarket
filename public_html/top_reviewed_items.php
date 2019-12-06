@@ -1,4 +1,10 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['username'])){
+      header("Location: /php/login.php");
+      exit;
+    }
+
     echo<<<ENDL
         <h1>Top 5 Rated Items</h1>
 ENDL;
