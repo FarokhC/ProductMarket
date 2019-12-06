@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['username'])){
-  header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+  header("Location: /php/login.php");
   exit;
 }
 

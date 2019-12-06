@@ -17,7 +17,7 @@ $dbname = "id11702576_marketplace";
  }
  else if ($res->num_rows == 0) {
    $_SESSION['fail'] = "Login failed!";
-   header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+   header("Location: /login.php");
    exit;
 
  } else {
@@ -29,7 +29,7 @@ $dbname = "id11702576_marketplace";
    $_SESSION['cHistory'] = array();
    $_SESSION['sHistory'] = array();
 
-   header("Location: https://phpproductmarket.000webhostapp.com/services.php");
+   header("Location: /services.php");
    exit;
  }
  $conn->close();
