@@ -23,6 +23,7 @@ if(!isset($_SESSION['username'])){
       array_push($pages, $page_name);
       $_SESSION['bHistory'] = $pages;
     }
+    incrementNumUsers($servername, $serverUsername, $serverPassword, $dbname, $page_name);
 
     if(isset($_POST['review_text']) && isset($_POST['rating'])) {
       $username = $_SESSION['username'];

@@ -55,4 +55,20 @@ ENDL;
         $conn->close();
     }
 
+    function incrementNumUsers($servername, $serverUsername, $serverPassword, $dbname, $page_name) {
+        $conn = new mysqli($servername, $serverUsername, $serverPassword, $dbname);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        else {
+            $sql = "UPDATE products SET num_user_visits = num_user_visits + 1 WHERE product_name = '$page_name'";
+            $res = $conn->query($sql);
+            if(!$res) {
+                $_SESSION['message'] = "err: " . $conn->error;
+            }
+            $conn->close();
+        }
+    }
+
 ?>
