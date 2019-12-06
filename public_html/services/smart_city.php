@@ -27,6 +27,7 @@ if(!isset($_SESSION['username'])){
       }
 
 
+      incrementNumUsers($servername, $serverUsername, $serverPassword, $dbname, $page_name);
     // require_once("../php/previous_visited_cookies.php");
     // handle_last_five_pages_visited($page_name);
     // handle_most_visited_pages($page_name);

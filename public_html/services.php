@@ -64,7 +64,9 @@ ENDL;
 ENDL;
 
   echo<<<ENDL
-    <a href="/top_reviewed_items.php">View Top 5 Rated Items</a>
+    <a href="/top_reviewed_items.php">View Top 5 Rated Items for the Whole Marketplace</a>
+    <br>
+    <a href="/most_viewed_items.php">Most viewed items for the Whole Marketplace</a>
 ENDL;
 
   echo<<<ENDL
