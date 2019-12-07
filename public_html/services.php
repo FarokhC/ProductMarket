@@ -56,11 +56,29 @@ ENDL;
   <br><br>
 ENDL;
 
-  echo<<<ENDL
-    <a href="/top_reviewed_items.php">View Top 5 Rated Items for the Whole Marketplace</a>
-    <br>
-    <a href="/most_viewed_items.php">Most viewed items for the Whole Marketplace</a>
+echo<<<ENDL
+<section class="hero-banner">
+  <div class="container">
+    <div class="row no-gutters align-items-center pt-60px">
+      <div class="col-5 d-none d-sm-block">
+        <div class="hero-banner__img">
+          <img class="img-fluid" src="/img/top5.jpg" alt="">
+        </div>
+      </div>
+      <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
+        <div class="hero-banner__content">
+          <h4>Top 5 Reviewed</h4>
+          <h1>Whole Marketplace</h1>
+          <a class="button button-hero" href="/top_reviewed_items.php">View Now</a>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br><br>
 ENDL;
+
 
   echo<<<ENDL
   <section class="related-product-area">
@@ -348,4 +366,21 @@ ENDL;
 </body>
 ENDL;
 
+echo<<<ENDL
+<section class="offer" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 20px 30px" data-top-bottom="background-position: 0 20px">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5">
+        <div class="offer__content text-center">
+          <h3>Most Viewed Items</h3>
+          <h4>Marketplace</h4>
+          <p>Ranked by page traffic</p>
+          <a class="button button--active mt-3 mt-xl-4" href="/most_viewed_items.php">See Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+==
+ENDL;
 ?>
