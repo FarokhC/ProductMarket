@@ -30,17 +30,32 @@ if(!isset($_SESSION['username'])){
     // require_once("../php/previous_visited_cookies.php");
     // handle_last_five_pages_visited($page_name);
     // handle_most_visited_pages($page_name);
-    echo<<<ENDL
-    <h1>Toyota Prius</h1>
-    <img src='https://i.gaw.to/content/photos/38/92/389207_2020_Toyota_Prius.jpg?280x175' alt='Toyota Prius'><br>
-    <h2>Vehicle Details</h2>
-    <ul>
-        <li>Horsepower: 121</li>
-        <li>Torque: 105 lb-ft</li>
-        <li>Fuel Economy: 58 city / 53 highway</li>
-        <li>0 - 60 MPH time: 9.8 seconds</li>
-    </ul>
-ENDL;
+
+    $this_file_name = basename(__FILE__);
+    $curl_url = "https://farokhcarrentalservice.000webhostapp.com/services/" . $this_file_name;
+    $ch = curl_init($curl_url);
+    $fp = fopen("product_page.txt", "w");
+
+    curl_setopt($ch, CURLOPT_FILE, $fp);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+
+    curl_exec($ch);
+    curl_close($ch);
+
+    echo file_get_contents("product_page.txt");
+    fclose($fp);
+
+//     echo<<<ENDL
+//     <h1>Toyota Prius</h1>
+//     <img src='https://i.gaw.to/content/photos/38/92/389207_2020_Toyota_Prius.jpg?280x175' alt='Toyota Prius'><br>
+//     <h2>Vehicle Details</h2>
+//     <ul>
+//         <li>Horsepower: 121</li>
+//         <li>Torque: 105 lb-ft</li>
+//         <li>Fuel Economy: 58 city / 53 highway</li>
+//         <li>0 - 60 MPH time: 9.8 seconds</li>
+//     </ul>
+// ENDL;
 getReviews($servername, $serverUsername, $serverPassword, $dbname, $page_name);
 
 ?>
