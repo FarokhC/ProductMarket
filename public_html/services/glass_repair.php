@@ -29,16 +29,30 @@ if(!isset($_SESSION['username'])){
     // require_once("../php/previous_visited_cookies.php");
     // handle_last_five_pages_visited($page_name);
     // handle_most_visited_pages($page_name);
-    echo<<<ENDL
-    <h1>Cracked Glass Repair</h1>
-    <img src='https://ig3zfrbsnd-flywheel.netdna-ssl.com/wp-content/uploads/2017/04/feature-1140x570.jpg' alt='Cracked Glass Repair'><br>
-    <h2>Details</h2>
-    <ul>
-        <li>Premium clear chip repair resin</li>
-        <li>Fixes chips less than the size of a quarter</li>
-        <li>1 year warranty</li>
-    </ul>
-ENDL;
+//     echo<<<ENDL
+//     <h1>Cracked Glass Repair</h1>
+//     <img src='https://ig3zfrbsnd-flywheel.netdna-ssl.com/wp-content/uploads/2017/04/feature-1140x570.jpg' alt='Cracked Glass Repair'><br>
+//     <h2>Details</h2>
+//     <ul>
+//         <li>Premium clear chip repair resin</li>
+//         <li>Fixes chips less than the size of a quarter</li>
+//         <li>1 year warranty</li>
+//     </ul>
+// ENDL;
+
+    $this_file_name = basename(__FILE__);
+    $curl_url = "https://farokhcarrentalservice.000webhostapp.com/services/" . $this_file_name;
+    $ch = curl_init($curl_url);
+    $fp = fopen("product_page.txt", "w");
+
+    curl_setopt($ch, CURLOPT_FILE, $fp);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+
+    curl_exec($ch);
+    curl_close($ch);
+
+    echo file_get_contents("product_page.txt");
+    fclose($fp);
 getReviews($servername, $serverUsername, $serverPassword, $dbname, $page_name);
 
 ?>

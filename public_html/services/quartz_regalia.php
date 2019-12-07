@@ -29,17 +29,32 @@ if(!isset($_SESSION['username'])){
     // require_once("../php/previous_visited_cookies.php");
     // handle_last_five_pages_visited($page_name);
     // handle_most_visited_pages($page_name);
-    echo<<<ENDL
-    <h1>Quartz Regalia </h1>
-    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKErVy370d23wGFcVdo1KwWdDdUdqIh0LDElJ_z3vottjWSDIo' alt='Quartz Regalia'><br>
-    <h2>Vehicle Details</h2>
-    <ul>
-        <li>Horsepower: 433 hp</li>
-        <li>Torque:  511 lb-ft</li>
-        <li>Fuel Economy: Unknown</li>
-        <li>0 - 60 MPH time: 4.7 seconds</li>
-    </ul>
-ENDL;
+
+    $this_file_name = basename(__FILE__);
+    $curl_url = "https://farokhcarrentalservice.000webhostapp.com/services/" . $this_file_name;
+    $ch = curl_init($curl_url);
+    $fp = fopen("product_page.txt", "w");
+
+    curl_setopt($ch, CURLOPT_FILE, $fp);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+
+    curl_exec($ch);
+    curl_close($ch);
+
+    echo file_get_contents("product_page.txt");
+    fclose($fp);
+
+//     echo<<<ENDL
+//     <h1>Quartz Regalia </h1>
+//     <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKErVy370d23wGFcVdo1KwWdDdUdqIh0LDElJ_z3vottjWSDIo' alt='Quartz Regalia'><br>
+//     <h2>Vehicle Details</h2>
+//     <ul>
+//         <li>Horsepower: 433 hp</li>
+//         <li>Torque:  511 lb-ft</li>
+//         <li>Fuel Economy: Unknown</li>
+//         <li>0 - 60 MPH time: 4.7 seconds</li>
+//     </ul>
+// ENDL;
 getReviews($servername, $serverUsername, $serverPassword, $dbname, $page_name);
 
 ?>
