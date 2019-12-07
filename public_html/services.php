@@ -7,13 +7,6 @@
     exit;
   }
 
-  if(isset($_GET['logout'])){
-    unset($_SESSION['username']);
-    header("Location: /php/login.php");
-    exit;
-  }
-
-  // echo "<a href = '/services.php?logout=true'>Logout</a><br>";
 
   if(isset($_GET['logout'])){
     unset($_SESSION['username']);
