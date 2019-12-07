@@ -1,10 +1,13 @@
 <?php
+
+require_once('../database_credentials.php');
+require_once("../php/utilities.php");
 session_start();
 // $pages = $_SESSION['bHistory'];
 // array_push($pages, "BodyArmor");
 // $_SESSION['bHistory'] = $pages;
 if(!isset($_SESSION['username'])){
-  header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+  header("Location: /php/login.php");
   exit;
 } else {
 
@@ -20,6 +23,14 @@ if(!isset($_SESSION['username'])){
       array_push($pages, $page_name);
       $_SESSION['bHistory'] = $pages;
     }
+    incrementNumUsers($servername, $serverUsername, $serverPassword, $dbname, $page_name);
+
+    if(isset($_POST['review_text']) && isset($_POST['rating'])) {
+      $username = $_SESSION['username'];
+      $review_text = $_POST['review_text'];
+      $rating = $_POST['rating'];
+      addReview($servername, $serverUsername, $serverPassword, $dbname, $username, $review_text, $rating, $page_name);
+      }
 
 
     // require_once("../php/previous_visited_cookies.php");
@@ -273,6 +284,8 @@ if(!isset($_SESSION['username'])){
   </div>
 </section>
 ENDL;
+
+getReviews($servername, $serverUsername, $serverPassword, $dbname, $page_name);
 
 // <h1><b>BodyArmor</b></h1>
 // <p>Explore our range of signature hoodies, t-shirts, polo shirts, and button down shirts....all

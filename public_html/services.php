@@ -1,14 +1,15 @@
 <?php
+
   session_start();
 
   if(!isset($_SESSION['username'])){
-    header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+    header("Location: /php/login.php");
     exit;
   }
 
   if(isset($_GET['logout'])){
     unset($_SESSION['username']);
-    header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+    header("Location: /php/login.php");
     exit;
   }
 
@@ -20,7 +21,7 @@
     unset($_SESSION['cHistory']);
     unset($_SESSION['sHistory']);
 
-    header("Location: https://phpproductmarket.000webhostapp.com/php/login.php");
+    header("Location: /php/login.php");
     exit;
   }
 
@@ -60,7 +61,15 @@ ENDL;
   </div>
   </section>
   <br><br>
+ENDL;
 
+  echo<<<ENDL
+    <a href="/top_reviewed_items.php">View Top 5 Rated Items for the Whole Marketplace</a>
+    <br>
+    <a href="/most_viewed_items.php">Most viewed items for the Whole Marketplace</a>
+ENDL;
+
+  echo<<<ENDL
   <section class="related-product-area">
 		<div class="container">
 			<div class="section-intro pb-60px">

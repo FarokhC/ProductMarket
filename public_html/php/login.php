@@ -6,6 +6,11 @@
     //   echo "<br>";
     // }
 
+    $session_error = "";
+    if(isset($_SESSION['fail'])) {
+      $session_error = $_SESSION['fail'];
+    }
+
     echo<<<ENDL
     <head>
       <meta charset="UTF-8">
@@ -31,7 +36,7 @@
           <div class="col-lg-6">
 
             <div class="login_form_inner">
-              <h5><font color = "red">$_SESSION[fail]</font></h5>
+              <h5><font color = "red">$session_error</font></h5>
               <h3>Log in to enter</h3>
               <form class="row login_form" method = "post" action="/php/checkLogin.php" id="contactForm" >
                 <div class="col-md-12 form-group">

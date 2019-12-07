@@ -51,6 +51,10 @@
             }
         }
     }
+    $session_message = "";
+    if(isset($_SESSION['message'])) {
+      $session_message = $_SESSION['message'];
+    }
     echo<<<ENDL
     <html lang="en">
     <head>
@@ -81,7 +85,7 @@
                 <a href="../php/login.php">Login</a>
                             <br><br>
   						<h3>Create an account</h3>
-                            <h5><font color = "red">$_SESSION[message]</font></h5>
+                            <h5><font color = "red">$session_message</font></h5>
   						<form class="row login_form" method = "post" action="../php/make_account.php" id="register_form" >
                 <div class="col-md-12 form-group">
                   <input type="text" class="form-control" name="first_name" placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'">
