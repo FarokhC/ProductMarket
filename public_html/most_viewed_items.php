@@ -48,7 +48,7 @@ ENDL;
             arsort($average_rating);
             $count = 0;
             foreach($average_rating as $key => $value) {
-                if ($value == "0" || $count > 5) {
+                if ($value == "0" || $count > 4) {
                     break;
                 }
                 echo "$key: Average Rating: $value<br>";
