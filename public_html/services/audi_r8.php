@@ -30,17 +30,31 @@
       addReview($servername, $serverUsername, $serverPassword, $dbname, $username, $review_text, $rating, $page_name);
     }
 
-    echo<<<ENDL
-    <h1>Audi R8</h1>
-    <img src='https://www.topgear.com/sites/default/files/styles/large/public/cars-car/carousel/2018/11/a1813694_large.jpg?itok=DCVn38mf' alt='Audi R8'><br>
-    <h2>Vehicle Details</h2>
-    <ul>
-        <li>Horsepower: 611 hp</li>
-        <li>Torque: 417 lb-ft</li>
-        <li>Fuel Economy: 13 city / 20 highway</li>
-        <li>0 - 60 MPH time: 3.2 seconds</li>
-    </ul>
-ENDL;
+//     echo<<<ENDL
+//     <h1>Audi R8</h1>
+//     <img src='https://www.topgear.com/sites/default/files/styles/large/public/cars-car/carousel/2018/11/a1813694_large.jpg?itok=DCVn38mf' alt='Audi R8'><br>
+//     <h2>Vehicle Details</h2>
+//     <ul>
+//         <li>Horsepower: 611 hp</li>
+//         <li>Torque: 417 lb-ft</li>
+//         <li>Fuel Economy: 13 city / 20 highway</li>
+//         <li>0 - 60 MPH time: 3.2 seconds</li>
+//     </ul>
+// ENDL;
+
+    $this_file_name = basename(__FILE__);
+    $curl_url = "https://farokhcarrentalservice.000webhostapp.com/services/" . $this_file_name;
+    $ch = curl_init($curl_url);
+    $fp = fopen("product_page.txt", "w");
+
+    curl_setopt($ch, CURLOPT_FILE, $fp);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+
+    curl_exec($ch);
+    curl_close($ch);
+
+    echo file_get_contents("product_page.txt");
+    fclose($fp);
 
   getReviews($servername, $serverUsername, $serverPassword, $dbname, $page_name);
 ?>
