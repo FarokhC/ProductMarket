@@ -381,6 +381,60 @@ echo<<<ENDL
     </div>
   </div>
 </section>
+
+ENDL;
+
+echo<<<ENDL
+<section class="offer" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 20px 30px" data-top-bottom="background-position: 0 20px">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5">
+        <div class="offer__content text-center">
+          <h3>Most Viewed Items</h3>
+          <h4>BulletProof</h4>
+          <p>Ranked by page traffic</p>
+          <a class="button button--active mt-3 mt-xl-4" href="/topFive/bulletProof.php">See Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ENDL;
+
+echo<<<ENDL
+<section class="offer" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 20px 30px" data-top-bottom="background-position: 0 20px">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5">
+        <div class="offer__content text-center">
+          <h3>Most Viewed Items</h3>
+          <h4>Car Rental Service </h4>
+          <p>Ranked by page traffic</p>
+          <a class="button button--active mt-3 mt-xl-4" href="/topFive/carRental.php">See Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ENDL;
+
+echo<<<ENDL
+<section class="offer" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 20px 30px" data-top-bottom="background-position: 0 20px">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5">
+        <div class="offer__content text-center">
+          <h3>Most Viewed Items</h3>
+          <h4>Smart AI</h4>
+          <p>Ranked by page traffic</p>
+          <a class="button button--active mt-3 mt-xl-4" href="/topFive/smart.php">See Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 ==
 ENDL;
 ?>
