@@ -6,7 +6,7 @@ if(!isset($_SESSION['username'])){
   header("Location: /php/login.php");
   exit;
 }
-    $page_name = "Smart Banking Solutions";
+    $page_name = "Smart Banking Solution";
     $visited = false;
     $pages = $_SESSION['sHistory'];
     foreach($pages as $key => $value){

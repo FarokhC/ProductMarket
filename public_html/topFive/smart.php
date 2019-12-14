@@ -13,7 +13,7 @@ ENDL;
         die("Connection failed: " . $conn->connect_error);
     }
     else {
-        $sql = "SELECT * FROM products WHERE company_name='SmartAI' ORDER BY num_user_visits DESC LIMIT 5";
+        $sql = "SELECT * FROM products WHERE company_name='Smart AI' ORDER BY num_user_visits DESC LIMIT 5";
         $res = $conn->query($sql);
         if(!$res) {
             $_SESSION['message'] = "err: " . $conn->error;

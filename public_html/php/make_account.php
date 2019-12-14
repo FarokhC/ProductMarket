@@ -1,7 +1,5 @@
 <?php
-
     session_start();
-
     $servername = "localhost";
     $username = "id11702576_phpproductmarket";
     $password = "bois3";
@@ -42,7 +40,6 @@
                 $sql = "INSERT INTO users (first_name, last_name, email, home_address, home_phone, cell_phone, username, pass_word) VALUES ('$first_name', '$last_name', '$email', '$home_address', '$home_phone', '$cell_phone', '$user_name', '$pass_word')";
                 $res = $conn->query($sql);
                 if(!$res) {
-
                     // echo "err: " . $conn->error;
                                     $_SESSION['message'] = "err: " . $conn->error;
                 }
